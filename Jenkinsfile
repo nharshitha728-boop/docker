@@ -9,13 +9,25 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
+            steps {
+                bat 'echo Building application...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'echo Running tests...'
+            }
+        }
+
+        stage('Docker Build') {
             steps {
                 bat 'docker build -t my-app .'
             }
         }
 
-        stage('Run Container') {
+        stage('Deploy') {
             steps {
                 bat 'docker run -d -p 5000:5000 my-app'
             }
