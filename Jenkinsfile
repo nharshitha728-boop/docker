@@ -16,10 +16,11 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                bat 'echo Running tests...'
-            }
-        }
+    steps {
+        bat 'pip install pytest'
+        bat 'pytest'
+    }
+}
 
         stage('Docker Build') {
             steps {
