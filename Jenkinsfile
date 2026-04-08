@@ -17,8 +17,8 @@ pipeline {
 
         stage('Test') {
     steps {
-        bat 'pip install pytest'
-        bat 'pytest'
+        bat 'python -m pip install pytest'
+        bat 'python -m pytest'
     }
 }
 
